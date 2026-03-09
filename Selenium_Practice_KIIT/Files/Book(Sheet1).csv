@@ -1,0 +1,6 @@
+Test Case No.,Description,Input,Expected Output,Actual Output,Status,Comments
+1,"when user clicks on add user, add user page should be displayed",click on add user,add user page displayed,add user page displayed,Pass,Test case Successful.
+2,user name text field should accept 5-32 characters only,shubh,username accepted,username accepted,Pass,Test case Successful.
+3,pass should have min 6 char and 1 speacial char,Shubh@1,password accepted,password accepted,Pass,Test case Successful.
+4,Selecting designation dropdown is mandatory,selected a designation,no error,no error,Pass,Test case Successful.
+5,should be a valid email id format              example:- abc@gmail.com,Shubh@gmail.com,email accepted,email accepted,Pass,Test case Successful.
