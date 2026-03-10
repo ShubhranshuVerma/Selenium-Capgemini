@@ -25,7 +25,8 @@ class CartPage:
 
     def enter_pincode(self, pincode):
         # self.driver.find_element('xpath', '//input[@id="ZipPostalCode"]').send_keys(int(pincode))
-        self.driver.find_element(*loc.postalcode).send_keys(int(pincode))
+        # self.driver.find_element(*loc.postalcode).send_keys(int(pincode))
+        self.util.send_keys(loc.postalcode,pincode)
         time.sleep(1)
 
     def click_on_terms_service(self):

@@ -13,11 +13,15 @@ class LoginPage:
 
     def enter_email(self, email_id):
         # self.driver.find_element('id', 'Email').send_keys(email_id)
-        self.driver.find_element(*loc.email).send_keys(email_id)
+        # self.driver.find_element(*loc.email).send_keys(email_id)
+        self.util.send_keys(loc.email,email_id)
+        time.sleep(1)
 
     def enter_pwd(self, pwd):
         # self.driver.find_element('id', 'Password').send_keys(pwd)
-        self.driver.find_element(*loc.password).send_keys(pwd)
+        # self.driver.find_element(*loc.password).send_keys(pwd)
+        self.util.send_keys(loc.password,pwd)
+        time.sleep(1)
 
     def click_on_login_btn(self):
         # self.driver.find_element('xpath', '//input[@value="Log in"]').click()
