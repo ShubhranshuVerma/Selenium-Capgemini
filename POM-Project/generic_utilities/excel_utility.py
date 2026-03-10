@@ -1,6 +1,6 @@
 import xlrd
 
-path = r'C:\Users\Ramya\PycharmProjects\POM-KIIT\files_\demo_testdata.xlsx'
+path = r'/Users/shubhranshuverma/PycharmProjects/POM-Project/files_/demo_testdata.xlsx'
 
 
 def read_excel():

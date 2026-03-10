@@ -2,13 +2,14 @@ import time
 
 from selenium.webdriver.support.select import Select
 from object_repository.cartpage_locators import CartPageLocators
-
+from generic_utilities.webdriver_utility import WebDriverUtility
 loc = CartPageLocators()
 
 class CartPage:
 
     def __init__(self, driver):
-        self.driver = driver            ## self.driver --> driver --> webdriver.Chrome()
+        self.driver = driver  ## self.driver --> driver --> webdriver.Chrome()
+        self.util = WebDriverUtility(driver)
 
     def select_country(self, country):
         # country_id = self.driver.find_element('xpath', '//select[@id="CountryId"]')
@@ -29,9 +30,12 @@ class CartPage:
 
     def click_on_terms_service(self):
         # self.driver.find_element('xpath', '//input[@id="termsofservice"]').click()
-        self.driver.find_element(*loc.terms_service).click()
+        # self.driver.find_element(*loc.terms_service).click()
+        self.util.click(loc.terms_service)
         time.sleep(1)
 
     def click_on_checkout(self):
         # self.driver.find_element('xpath', '//button[@id="checkout"]').click()
-        self.driver.find_element(*loc.checkout_btn).click()
+        # self.driver.find_element(*loc.checkout_btn).click()
+        self.util.click(loc.checkout_btn)
+        time.sleep(1)

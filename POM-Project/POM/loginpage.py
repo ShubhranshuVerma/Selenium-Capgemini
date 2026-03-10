@@ -1,6 +1,7 @@
 import time
 
 from object_repository.loginpage_locators import LoginPageLocators
+from generic_utilities.webdriver_utility import WebDriverUtility
 
 loc = LoginPageLocators()
 
@@ -8,6 +9,7 @@ class LoginPage:
 
     def __init__(self, driver):
         self.driver = driver        ## self.driver --> driver --> webdriver.Chrome()
+        self.util = WebDriverUtility(driver)
 
     def enter_email(self, email_id):
         # self.driver.find_element('id', 'Email').send_keys(email_id)
@@ -19,5 +21,6 @@ class LoginPage:
 
     def click_on_login_btn(self):
         # self.driver.find_element('xpath', '//input[@value="Log in"]').click()
-        self.driver.find_element(*loc.login_btn).click()
+        # self.driver.find_element(*loc.login_btn).click()
+        self.util.click(loc.login_btn)
         time.sleep(4)

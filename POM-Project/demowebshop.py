@@ -1,3 +1,5 @@
+## Linear code  :
+
 import time
 
 from selenium import webdriver

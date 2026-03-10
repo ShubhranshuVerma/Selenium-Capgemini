@@ -5,6 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 from object_repository.desktoppage_locators import DesktopLocators
+from generic_utilities.webdriver_utility import WebDriverUtility
 
 loc = DesktopLocators()
 
@@ -13,6 +14,7 @@ class DesktopPage:
     def __init__(self, driver):
         self.driver = driver            ## self.driver --> driver --> webdriver.Chrome()
         self.ac = ActionChains(driver)
+        self.util=WebDriverUtility(driver)
 
     def select_sortby(self, text):
         # sort = self.driver.find_element('xpath', '//select[@id="products-orderby"]')
@@ -34,7 +36,8 @@ class DesktopPage:
 
     def click_on_simp_com(self):
         # self.driver.find_element('xpath', '(//a[text()="Simple Computer"])[2]').click()
-        self.driver.find_element(*loc.simp_comp).click()
+        # self.driver.find_element(*loc.simp_comp).click()
+        self.util.click(loc.simp_comp)
         time.sleep(1)
 
 
